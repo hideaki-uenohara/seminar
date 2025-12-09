@@ -11,7 +11,7 @@
 
 <meta name="author" content="上ノ原 秀晃" />
 
-<meta name="date" content="2025-03-31" />
+<meta name="date" content="2025-12-09" />
 
 <title>Rを使ったデータ分析入門</title>
 
@@ -1481,12 +1481,12 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Rを使ったデータ分析入門</h1>
 <h4 class="author">上ノ原 秀晃</h4>
-<h4 class="date">2025-03-31</h4>
+<h4 class="date">2025-12-09</h4>
 
 </div>
 
 
-<p>現在作成中です。</p>
+<p>この資料は上ノ原が自分の授業で使用するために作成しているものです。</p>
 <div id="rの特徴" class="section level2" number="1">
 <h2><span class="header-section-number">1</span> Rの特徴</h2>
 <p>この資料では統計ソフトRを使ったデータ分析について説明しています。Rは統計分析ソフトの一つで、さまざまな分野の研究や実務において利用されています。</p>
@@ -1499,15 +1499,16 @@ Interfaceといいます）。一方、Rではキーボードからコマンド�
 User
 Interfaceといいます）。初歩的なプログラムミングの経験があればそれほど難しくありませんが、ない場合はハードルが高く感じられるでしょう。</p>
 <p>第2の短所は、とても残念なことですが、社会調査のデータ分析はあまり得意ではないことです。SPSSにあるような、特定の（複数の）値を欠損値として扱う機能はRにはありません。パッケージとしても提供されていないようです。また、質問紙調査の後には度数分布表やクロス集計表で回答の分布や質問間の関連を確認しますが、Rでは度数と相対度数（％）を同時に表示することができません。とはいえ、いずれの欠点も分析方法を工夫したり、出力結果を加工することで対処可能ですので、あまり致命的な問題点とはいえません。</p>
-<p>なお、以下の説明ではRStudio（正式名称はRStudio
-Desktop）というソフトを利用します。RStudioは統合開発環境（IDE:
-Integrated Development
+<p>なお、以下の説明では、ブラウザ内で使用できるPosit
+Cloudを使用します。Posit
+CloudはRStudioのクラウド版です。RStudioは統合開発環境（IDE: Integrated
+Development
 Environment）と呼ばれるソフトウェアで、Rを便利に利用するためのさまざまな機能を有しています。</p>
 </div>
-<div id="rのインストール" class="section level2" number="2">
-<h2><span class="header-section-number">2</span> Rのインストール</h2>
-<p>Rを利用するためには、当然ですが、RをPCにインストールする必要があります（ブラウザ上で利用できるRもあることにはあります）。RStudioをインストールする場合はこれもインストールする必要があります。注意が必要なのは、RStudioはあくまでRを便利に利用するためのソフトウェアですので、Rそのものは別にインストールする必要があります。</p>
-<p>RとRStudioのインストール方法については、さまざまな解説サイトがありますので、そちらを参考にしてください。</p>
+<div id="posit-cloudの導入と基本操作" class="section level2" number="2">
+<h2><span class="header-section-number">2</span> Posit
+Cloudの導入と基本操作</h2>
+<p>執筆中</p>
 </div>
 <div id="rを使ってみる" class="section level2" number="3">
 <h2><span class="header-section-number">3</span> Rを使ってみる</h2>
@@ -1600,9 +1601,10 @@ b\)</span>は「aはbより大きい、または、bと等しい」という意�
 </div>
 <div id="ベクトル" class="section level3" number="3.4">
 <h3><span class="header-section-number">3.4</span> ベクトル</h3>
-<p>データ分析では、たとえば生徒100人の英語の点数から平均や標準偏差を求めたり、英語の点数と数学の点数の相関を求めたりします。このときに使えるのがベクトルという仕組みです。高等学校の数学では、ベクトルは2次元の平面や3次元の空間におけるベクトルは複数の数字や文字列をまとめたもの。コンマ（,）で繋いで、c()で囲む。
-ベクトルに含まれているデータの数をベクトルの長さ、もしくはベクトルのサイズという。
-ベクトルの順序には意味があり、下の例では5人の身長、体重、名前が同じ順序で入っている。</p>
+<p>データ分析では、たとえば生徒100人の英語の点数から平均や標準偏差を求めたり、英語の点数と数学の点数の相関を求めたりします。このときに使えるのがベクトルという仕組みです。高等学校の数学では、ベクトルは2次元の平面や3次元の空間におけるベクトルは複数の数字や文字列をまとめたもの。コンマ（,）で繋いで、c()で囲む。</p>
+<p>ベクトルに含まれているデータの数をベクトルの長さ、もしくはベクトルのサイズといいます。
+ベクトルの順序には意味があり、下の例では5人の身長、体重、名前が同じ順序で入っています。
+このとき、ベクトルの長さ（サイズ）は5です。</p>
 <pre class="r"><code>height &lt;- c(176, 173, 168, 166, 170)
 weight &lt;- c(58, 62, 52, 54, 55)
 name &lt;- c(&quot;相葉&quot;,&quot;松本&quot;,&quot;二宮&quot;,&quot;大野&quot;,&quot;櫻井&quot;)
@@ -1617,12 +1619,16 @@ height</code></pre>
 <pre><code>## [1] 1.76 1.73 1.68 1.66 1.70</code></pre>
 <pre class="r"><code>height - weight</code></pre>
 <pre><code>## [1] 118 111 116 112 115</code></pre>
+<p>ベクトルに対して論理式を適用することもできます。</p>
 <pre class="r"><code>height &gt;= 170</code></pre>
 <pre><code>## [1]  TRUE  TRUE FALSE FALSE  TRUE</code></pre>
-<pre class="r"><code>height &gt;= c(180, 175, 170, 165, 160)</code></pre>
-<pre><code>## [1] FALSE FALSE FALSE  TRUE  TRUE</code></pre>
 <pre class="r"><code>name == &quot;二宮&quot;</code></pre>
 <pre><code>## [1] FALSE FALSE  TRUE FALSE FALSE</code></pre>
+<pre class="r"><code>height &gt;= c(180, 175, 170, 165, 160)</code></pre>
+<pre><code>## [1] FALSE FALSE FALSE  TRUE  TRUE</code></pre>
+</div>
+<div id="データフレーム" class="section level3" number="3.5">
+<h3><span class="header-section-number">3.5</span> データフレーム</h3>
 <pre class="r"><code>arashi &lt;- data.frame(name,height,weight)
 arashi</code></pre>
 <pre><code>##   name height weight
@@ -1708,15 +1714,20 @@ idol</code></pre>
 ## sample estimates:
 ## mean in group arashi   mean in group smap 
 ##                170.6                173.2</code></pre>
-<pre class="r"><code># tidyverseというパッケージを使って、より高度な分析を行う
-# install.packages(&quot;tidyverse&quot;, dependencies = TRUE) 
+</div>
+</div>
+<div id="データの基本的分析" class="section level2" number="4">
+<h2><span class="header-section-number">4</span> データの基本的分析</h2>
+<pre class="r"><code># install.packages(&quot;tidyverse&quot;, dependencies = TRUE) 
 library(&quot;tidyverse&quot;)</code></pre>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.5.2</code></pre>
+<pre><code>## Warning: package &#39;readr&#39; was built under R version 4.5.2</code></pre>
 <pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-## ✔ dplyr     1.1.4     ✔ readr     2.1.5
-## ✔ forcats   1.0.0     ✔ stringr   1.5.1
-## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+## ✔ dplyr     1.1.4     ✔ readr     2.1.6
+## ✔ forcats   1.0.1     ✔ stringr   1.6.0
+## ✔ ggplot2   4.0.1     ✔ tibble    3.3.0
 ## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-## ✔ purrr     1.0.4     
+## ✔ purrr     1.2.0     
 ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
@@ -2396,20 +2407,21 @@ mean(d$いか)</code></pre>
 ## sample estimates:
 ## mean difference 
 ##          754.25</code></pre>
-<pre class="r"><code># 東京と大阪でまぐろとたいの消費額を比べる
+<pre class="r"><code># 東日本と西日本でまぐろとたいの消費額を比べる
+# 東日本は1、西日本は0となるようなダミー変数を作成
 d$east &lt;- ifelse(1:nrow(d) &lt;= 23, 1, 0) #福井、岐阜、愛知より東を東日本にする
-t.test(たい ~ east, data = d)</code></pre>
+t.test(まぐろ ~ east, data = d)</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
-## data:  たい by east
-## t = 7.6965, df = 36.925, p-value = 3.462e-09
+## data:  まぐろ by east
+## t = -5.8193, df = 41.427, p-value = 7.556e-07
 ## alternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0
 ## 95 percent confidence interval:
-##   603.3916 1034.6536
+##  -3848.222 -1865.830
 ## sample estimates:
 ## mean in group 0 mean in group 1 
-##       1553.2400        734.2174</code></pre>
+##        2935.800        5792.826</code></pre>
 <pre class="r"><code>t.test(たい ~ east, data = d)</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
@@ -2449,7 +2461,6 @@ d |&gt;
 #  xlab(&quot;まぐろ&quot;) + ylab (&quot;たい&quot;) + 
 #  ggtitle(&quot;まぐろとたいの消費額&quot;) + 
 #  theme_gray(base_family = &quot;HiraKakuPro-W3&quot;)</code></pre>
-</div>
 </div>
 
 
